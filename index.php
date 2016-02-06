@@ -21,7 +21,7 @@ if($results){
 		echo '<div class="caption">';
 		echo '<h4>'.$obj->product_name.'</h4>';
 		echo '<div class="descr">'.$obj->product_desc.'</div>';
-		echo '<div class="btn btn-default btn-kosik pull-right"><a href="buy.php?code='.$obj->product_code.'">Kupit</a></div>';
+		echo '<a href="buy.php?code='.$obj->product_code.'"><div class="btn btn-default btn-kosik pull-right">Kupit</div></a>';
 
 		echo '<div class="price">'.$obj->price.'.</div>';
 

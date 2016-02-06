@@ -16,4 +16,14 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 
 
+CREATE TABLE IF NOT EXISTS `basket` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_code` varchar(60) NOT NULL,
+  `quantity` varchar (60) NOT NULL,
+  PRIMARY KEY (`id`),
+ UNIQUE KEY `product_code` (`product_code`)
+) AUTO_INCREMENT=1 ;
 
+
+
+INSERT INTO `basket` (`id`, `product_code`,`quantity`) VALUES (`id`, `product_code`,`quantity`);
