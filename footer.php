@@ -8,6 +8,9 @@
 
 
 ?>
+<div class="container">
+    <a href="admin/index.php" class="pull-right">Admin</a>
+</div>
 
 </body>
 </html>

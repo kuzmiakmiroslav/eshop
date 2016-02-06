@@ -1,27 +1,21 @@
 <?php
-session_start();
+
 include_once("./includes/config.php");
+$code = $_GET['code'];
 
-$id=$_GET['id'];
+if ($code != "") {
 
-$code=$_GET['product_code'];
+    $sql = "INSERT INTO `basket` (`product_code`, `quantity`) VALUES (  '$code' , 1)";
+    $mysqli->query($sql);
+    header('Location: basket.php');
 
-$qty=$_GET['quantity'];
+}else{
 
-
-
-if($id!=""){
-	//treba spravit insert do db
+    echo "Chyba: Prazdny alebo nespravny kod.";
+    exit;
 
 }
-$sql = "INSERT INTO `basket` (`id`, `product_code`, `quantity`) VALUES
-( '$id' , '$code' , '25')";
-$results = $mysqli->query($sql);
 
-echo $sql;
-echo $id;
-echo $code;
 
 ?>
 
-	
