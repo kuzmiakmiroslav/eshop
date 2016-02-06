@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shopping Cart</title>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!--skuska boostrap--------------------->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/shop-homepage.css" rel="stylesheet">
+<!----koniec skusky boostrap------------------->
+
+</head>
+<!---------html formular odosielaci metodou post akciou  add.php------------------------------------------------------------------->
+<body>
+
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="/productList.php">Product List</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<div class="container">
+  <form role="form" name="addProduct" method="post" action="add.php" enctype = "multipart/form-data">
+    <div class="form-group">
+      <label for="product_name">Názov produktu</label>
+      <input id="product_name" type="text" class="form-control" name="product_name">
+    </div>
+    <div class="form-group">
+      <label for="product_code">Číslo produktu</label>
+      <input id="product_code" type="text" class="form-control" name="product_code">
+    </div>
+    <div class="form-group">
+      <label for="product_img">Obrazok</label>
+      <input id="product_img" type="file" class="form-control" name="product_img">
+    </div>
+    <div class="form-group">
+      <label for="price">Cena</label>
+      <input id="price" type="text" class="form-control" name="price">
+    </div>
+    <div class="form-group">
+      <label for="product_desc">Popis</label>
+      <input id="product_desc" type="text" class="form-control" name="product_desc">
+    </div>
+    <button type="submit" class="btn btn-default">Pridaj</button>
+    <button type="submit" class="btn btn-default">
+    <a href="productList.php"></a>Späť
+    </button>
+  </form>
+</div>
+<!--------end container----->
+
+</body>
+</html>
