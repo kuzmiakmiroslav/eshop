@@ -8,10 +8,6 @@
 
 
 ?>
-<div class="container">
-    <a href="../index.php" class="pull-right">Stranka</a>
-</div>
-
 
 </body>
 </html>

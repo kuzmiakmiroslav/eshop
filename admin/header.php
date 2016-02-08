@@ -38,6 +38,8 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a href="productList.php">Product List</a></li>
+          <li><a href="../index.php">preview</a></li>
+
       </ul>
     </div>
     <!--/.nav-collapse -->

@@ -13,7 +13,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eshop</title>
+
 
 <!-- Bootstrap core CSS -->
 <link href="./css/bootstrap.css" rel="stylesheet">
@@ -39,25 +39,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">uStore</a>
+            <a class="navbar-brand" href="home.php">uStore</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.html">Úvod</a>
+                    <a href="home.php">Úvod</a>
                 </li>
                 <li>
-                    <a href="about.html">O nás</a>
+                    <a href="about.php">O nás</a>
                 </li>
                 <li>
                     <a href="index.php">Obchod</a>
                 </li>
                 <li>
-                    <a href="contact.html">Kontakt</a>
+                    <a href="contact.php">Kontakt</a>
                 </li>
                 <li>
-                    <a href="basket.php">Kosik</a>
+                    <a href="basket.php"><i class="fa fa-shopping-basket"></i>
+                    </a>
                 </li>
 
 

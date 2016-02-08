@@ -10,18 +10,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!--style pre 3 bannery muzi zeny a ostatne ...--->
+
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
 
-    <title>ustore | úvod</title>
+    <title>uStore | Úvod</title>
     <link rel="stylesheet" href="css/footer.css">
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css"  rel="stylesheet">
+
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/bootstrap-theme.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/full-slider.css" rel="stylesheet">
 
@@ -35,44 +35,16 @@
 </head>
 
 <body>
+<?php
+
+
+include_once("header.php");
+
+?>
+
+
 
     <!-- Navigation -->
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">uStore</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Úvod</a>
-                    </li>
-                    <li>
-                        <a href="about.html">O nás</a>
-                    </li>
-                    <li>
-                        <a href="index.php">Obchod</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Kontakt</a>
-                    </li>
-
-                    
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
     <!-- Full Page Image Background Carousel Header -->
     <header id="myCarousel" class="carousel slide">
@@ -224,72 +196,12 @@
         
     </section>
     <!-- =================================end banner-->
-<!-- ==========================
-    	FOOTER - START 
-    =========================== -->
-    <footer class="footer-distributed">
 
-        <div class="footer-left">
-
-            <h3>u<span>Store</span></h3>
-
-            <p class="footer-links">
-                <a href="index.html">Úvod</a>
-                ·
-                <a href="about.html">O nás</a>
-                ·
-                <a href="services.html">Služby</a>
-                ·
-                <a href="partners.html">Partnery</a>
-                ·
-                <a href="references.html">Referencie</a>
-                ·
-                <a href="contact.html">Kontakt</a>
-            </p>
-
-            <p class="footer-company-name">uStore &copy; 2016</p>
-        </div>
-
-        <div class="footer-center">
-
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>Okružná 44
-</span> 95174 Poprad, SLOVAKIA</p>
-            </div>
-
-            <div>
-                <i class="fa fa-phone"></i>
-                <p><a href="tel:+421 0904 475 648">+421 0904 475 648</a></p>
-            </div>
-
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:kuzmiakmiroslav@gmail.com">kuzmiakmiroslav@gmail.com</a></p>
-            </div>
-
-        </div>
-
-        <div class="footer-right">
-
-            <p class="footer-company-about">
-                <span>About the company</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-            </p>
-
-            <div class="footer-icons">
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-
-
-            </div>
-
-        </div>
-
-    </footer>
-    <!-- ==========================
-    	FOOTER - END 
-    =========================== -->
 </body>
 
 </html>
+<?php
+
+include_once("footer.php");
+
+?>

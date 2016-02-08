@@ -143,16 +143,16 @@ if($action=="edit"){
 
 <form role="form" name="addProduct" method="post" action="<?php echo $formAction ?>" enctype = "multipart/form-data">
     <div class="form-group">
-      <label for="product_name">Názov produktu</label>
+      <label for="product_name">NÃ¡zov produktu</label>
       <input value="<?php echo $name ?>" id="product_name" type="text" class="form-control" name="product_name">
     </div>
     <div class="form-group">
-      <label for="product_code">Èíslo produktu</label>
+      <label for="product_code">ÄŒÃ­slo produktu</label>
       <input value="<?php echo $code ?>" id="product_code" type="text" class="form-control" name="product_code">
     </div>
     <div class="form-group">
       <label for="product_img">Obrazok</label>
-      <input id="product_img" type="file" class="form-control" name="product_img">
+		<input id="product_img" type="file" class="upload" name="product_img">
     </div>
     <div class="form-group">
       <label for="price">Cena</label>
@@ -162,8 +162,8 @@ if($action=="edit"){
       <label for="product_desc">Popis</label>
       <input value="<?php echo $desc ?>" id="product_desc" type="text" class="form-control" name="product_desc">
     </div>
-    <button type="submit" name="Submit"  class="btn btn-default">Odosli</button>
-    <a href="productList.php" class="btn btn-default">Navrat</a>
+    <button type="submit" name="Submit"  class="btn btn-default">OdoÅ¡li</button>
+    <a href="productList.php" class="btn btn-default">NÃ¡vrat</a>
   </form>
 </div>
 
