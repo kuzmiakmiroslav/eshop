@@ -37,7 +37,7 @@ include_once("header.php");
         		echo '<td>' . $obj->product_img_name . '</td>';
         		echo '<td>' . $obj->price . '</td>';
         		echo '<td><a href="edit.php?id=' . $obj->id . '"><i class="fa fa-pencil-square-o"></i> Edit</a></td>';         // zobrazenei presmerovania edit
-        		echo '<td><a href="delete.php?id=' . $obj->id . '"><i class="fa fa-times"></i> Delete</a></td>';     //zobrazenie presmerovania delete
+        		echo '<td><a href="delete.php?id=' . $obj->id . '"><i class="fa fa-times"></i>Delete</a></td>';     //zobrazenie presmerovania delete
 
         		echo '</tr>';
 

@@ -9,7 +9,8 @@ if ($code != "") {
     $mysqli->query($sql);
     header('Location: basket.php');
 
-}else{
+}
+else{
 
     echo "Chyba: Prazdny alebo nespravny kod.";
     exit;

@@ -18,9 +18,7 @@
 
     <title>uStore | Úvod</title>
     <link rel="stylesheet" href="css/footer.css">
-    <!-- Bootstrap Core CSS -->
 
-<link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/full-slider.css" rel="stylesheet">

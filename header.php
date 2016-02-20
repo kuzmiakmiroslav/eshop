@@ -15,9 +15,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<!-- Bootstrap core CSS -->
-<link href="./css/bootstrap.css" rel="stylesheet">
-
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 <!-- Custom Fonts -->
 <link rel="stylesheet" href="./css/font-awesome.min.css">
 

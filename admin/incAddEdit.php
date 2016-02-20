@@ -14,6 +14,7 @@ $name = "";
 $code = "";
 $price = 0;
 $desc = "";
+$sex = "";
 
 //inicializacia premennej pola errors
 $errors = array();
@@ -21,7 +22,7 @@ if(!isset($_POST['Submit'])) {
 
 	if($action=="edit"){
 
-		$results = $mysqli->query("SELECT id,product_code, product_name, product_desc, product_img_name, price FROM products where id=" . $id);
+		$results = $mysqli->query("SELECT id,product_code, product_name, product_desc, product_img_name, price,sex FROM products where id=" . $id);
 
 		if ($obj = $results->fetch_object()) {
 
@@ -30,6 +31,7 @@ if(!isset($_POST['Submit'])) {
 			$name = $obj->product_name;
 			$price = $obj->price;
 			$desc = $obj->product_desc;
+			$sex = $obj->sex;
 
 
 		}
@@ -49,6 +51,7 @@ if(!isset($_POST['Submit'])) {
 		$code = $_POST['product_code'];
 		$price = $_POST['price'];
 		$desc = $_POST['product_desc'];
+		$sex = $_POST['sex'];
 
 
 		//validacia odoslanych premennych
@@ -87,11 +90,11 @@ if(!isset($_POST['Submit'])) {
 		if (empty($errors)==true) {
 
 			if($action=="insert"){
-				$sql = "INSERT INTO `products` (`product_code`, `product_name`, `product_desc`, `product_img_name`, `price`)
-						VALUES ( '$code', '$name', '$desc', '$product_img_name',$price)";
+				$sql = "INSERT INTO `products` (`product_code`, `product_name`, `product_desc`, `product_img_name`, `price`, `sex`)
+						VALUES ( '$code', '$name', '$desc', '$product_img_name',$price,$sex)";
 
 			}else{
-				$sql = "update `products` set product_name='$name',product_code='$code',product_desc='$desc',price='$price',product_img_name='$product_img_name'
+				$sql = "update `products` set product_name='$name',product_code='$code',product_desc='$desc',price='$price',product_img_name='$product_img_name',sex='$sex'
 					where id=" . $id;
 
 			}
@@ -117,7 +120,6 @@ if(!isset($_POST['Submit'])) {
 
 include_once("header.php");
 
-
 ?>
 
 <div class="container">
@@ -142,7 +144,14 @@ if($action=="edit"){
 
 
 <form role="form" name="addProduct" method="post" action="<?php echo $formAction ?>" enctype = "multipart/form-data">
-    <div class="form-group">
+
+	<tr><td rowspan="2">Kategória</td>
+		<td><input type="radio" name="sex" value="1"/>Male</td>
+	<tr>
+		<td><input type="radio" name="sex" value="0"/>Female</td></tr>
+	</tr>
+
+	<div class="form-group">
       <label for="product_name">Názov produktu</label>
       <input value="<?php echo $name ?>" id="product_name" type="text" class="form-control" name="product_name">
     </div>

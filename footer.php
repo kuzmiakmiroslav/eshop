@@ -1,13 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kuzmik
- * Date: 03.01.16
- * Time: 20:34
- */
 
-
-?>
 
 <footer class="footer-distributed">
 
@@ -23,7 +14,7 @@
             ·
             <a href="index.php">Obchod</a>
             ·
-            <a href="references.html">Kontakt</a>
+            <a href="contact.php">Kontakt</a>
             ·
             <a href="basket.php">Košik</a>
         </p>

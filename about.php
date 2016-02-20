@@ -15,8 +15,7 @@
 
     <title>uStore | O nás</title>
     <link href="css/footer.css" rel="stylesheet" type="text/css">
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link href="css/full-width-pics.css" rel="stylesheet">

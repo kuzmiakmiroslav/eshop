@@ -26,10 +26,9 @@ include_once("header.php");
 
     <link href="css/footer.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="./css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+
+
 
 
     <!-- Custom Fonts -->
@@ -55,19 +54,19 @@ include_once("header.php");
     <th>Názov</th>
     <th>Cena</th>
     <th>Množstvo</th>
-    <th>zmaz</th>
+    <th>zmazať produkt</th>
 </tr>
 
 <?php
 $SQL ="
   SELECT
-
+    basket.id,
     products.product_code,
     products.product_name,
     products.product_img_name,
     products.price,
     quantity
-    FROM basket inner join products on basket.product_code = products.product_code
+    FROM `basket` inner join products on basket.product_code = products.product_code
 ";
 $results = $mysqli->query($SQL);
 if ($results) {
@@ -85,16 +84,22 @@ if ($results) {
 
 
     }
+}
+
 
     ?>
 </table>
 </div>
 
+<div class="container">
+    skuska
+</div>
 </html></body>
 
 <?php
 
     include_once("footer.php");
 
-}
+
+
 ?>

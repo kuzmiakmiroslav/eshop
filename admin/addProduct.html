@@ -40,6 +40,11 @@
 <div class="container">
   <form role="form" name="addProduct" method="post" action="add.php" enctype = "multipart/form-data">
     <div class="form-group">
+      <tr><td rowspan="2">Category</td>
+        <td><input type="radio" name="category" value="Male"/>Male</td>
+      <tr>
+        <td><input type="radio" name="category" value="Female"/>Female</td></tr>
+      </tr>
       <label for="product_name">Názov produktu</label>
       <input id="product_name" type="text" class="form-control" name="product_name">
     </div>

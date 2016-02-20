@@ -21,10 +21,6 @@ include_once("header.php");
 
    <link href="css/footer.css" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
 
 
     <!-- Custom Fonts -->
