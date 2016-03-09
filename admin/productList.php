@@ -9,16 +9,25 @@
 include_once("../includes/config.php");
 include_once("header.php");
 ?>
-<div class="container">
-<h1>Product List</h1>    
+
+
+	<div class="container">
+<h1>Product List</h1>
+
+		<tr>
+
+		<?echo "<input type='radio' name='answer' value='".."'>".$results."</input><br />";?>
+
+
+		</tr>
 <div class="table-responsive">
         <table class="table">
         <tr>    
-        	<th>Code</th>
-        	<th>Name</th>
-        	<th>Desc</th>
-        	<th>Image</th>
-        	<th>Price</th>
+        	<th>Kód</th>
+        	<th>Názov</th>
+        	<th>Popis</th>
+        	<th>Obrazok</th>
+        	<th>Cena</th>
         	<th>&nbsp;</th>
         	<th>&nbsp;</th>
 

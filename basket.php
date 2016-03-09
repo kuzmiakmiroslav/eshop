@@ -46,7 +46,7 @@ include_once("header.php");
 <html>
 
 <div class="container">
-<h1>Košik</h1>
+<h1>Košík</h1>
 <table class="table">
 <tr>
 <th>Obrázok</th>
@@ -92,7 +92,8 @@ if ($results) {
 </div>
 
 <div class="container">
-    skuska
+    <a href="men.php">pokračovať v nákupe</a>
+    <a href="#">objednať</a>
 </div>
 </html></body>
 

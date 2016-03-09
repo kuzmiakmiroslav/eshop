@@ -11,19 +11,19 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-<!-- Custom Fonts -->
-<link rel="stylesheet" href="./css/font-awesome.min.css">
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
 
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -32,25 +32,42 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home.php">uStore</a>
+            <a class="navbar-brand" href="index.php">uStore</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="home.php">Úvod</a>
+                    <a href="index.php">Úvod</a>
                 </li>
                 <li>
                     <a href="about.php">O nás</a>
                 </li>
-                <li>
-                    <a href="index.php">Obchod</a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">obchod</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="men.php">
+
+                                 muzi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="woman.php">
+
+                                 zeny
+
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
                 <li>
                     <a href="contact.php">Kontakt</a>
@@ -61,7 +78,6 @@
                 </li>
 
 
-
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -70,20 +86,11 @@
 </nav>
 
 
-
-
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
-<!-- Script to Activate the Carousel -->
-<script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
 
 
 </body>
