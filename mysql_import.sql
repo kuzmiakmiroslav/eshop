@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS `products` (
   UNIQUE KEY `product_code` (`product_code`)
 ) AUTO_INCREMENT=1 ;
 
-
 CREATE TABLE IF NOT EXISTS `basket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `session_id` varchar(60) NOT NULL,
@@ -20,6 +19,13 @@ CREATE TABLE IF NOT EXISTS `basket` (
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=1 ;
 
-
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) UNIQUE,
+  `passcode` varchar(50) ,
+  `name` varchar(50) ,
+  `address` varchar(50) ,
+  PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1 ;
 
 

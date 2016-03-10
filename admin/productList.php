@@ -16,7 +16,6 @@ include_once("header.php");
 
 		<tr>
 
-		<?echo "<input type='radio' name='answer' value='".."'>".$results."</input><br />";?>
 
 
 		</tr>
