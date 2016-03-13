@@ -1,47 +1,83 @@
 <?php
 
-include_once("../config.php");
-include_once("header.php");
-session_start();
+include_once("includes/common.php");
+include_once("includes/config.php");
 
 if (isset($_POST['Submit'])) {
 
-    $errors = array();
-    $userName = mysqli_real_escape_string($db, $_POST['username']);
-    $userPassword = mysqli_real_escape_string($db, $_POST['password']);
+	$errors = array();
 
-    $sql = "SELECT id FROM users WHERE email='$userName' and passcode='$userPassword'";
-    $results = $mysqli->query($sql);
-    if ($results) {
-        $obj = $results->fetch_object();
-        $obj->passcode;
-    } else {
+	$email = $_POST['email'];
+	$password = $_POST['password'];
 
-    }
+	if( $email == ""){
+		$errors[]="Email musite zadat.";
+	}
+
+	if( $password == ""){
+		$errors[]="Heslo musite zadat.";
+	}
+
+	if($email!=""){
+
+		$sql = "SELECT * FROM users WHERE email='$email'";
+		$results = $mysqli->query($sql);
+
+		if ($obj = $results->fetch_object()) {
+
+			$id = $obj->id;
+			$passcode = $obj->passcode;
+			$email = $obj->email;
+
+			if($email == "" || $passcode!=$password ){
+				$errors[] = "Nespravne prihlasovacie udaje.";
+			}else{
+				SetSession("UserId", $id);
+				header('Location: index.php');
+				exit;
+			}
+		}
+
+	}
+
+
+
 
 }
+include_once("header.php");
 
 ?>
+
 <div class="container">
     <div class="row">
 
         <div class="col-md-4">
-            <h2>Login</h2>
+            <h2>Prihlasenie</h2>
+<?php
 
-            <form action="" method="post">
+if (!empty($errors)) {
+	echo '<div class="alert alert-danger">';
+	foreach ($errors as $err) {
+		echo $err . "<br/>";
+	}
+	echo '</div>';
+}
+
+?>
+
+            <form action="login.php" method="post">
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" <?php echo 'value="'.$email.'"'; ?>'" class="form-control" id="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input name="password" type="password" class="form-control" id="exampleInputPassword1"
-                           placeholder="Password">
+                    <label for="exampleInputPassword1">Heslo</label>
+                    <input name="password" type="password" class="form-control" id="password"
+                           placeholder="Heslo">
                 </div>
 
-                <p class="help-block"><a href="register.php">Registrovat</p>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" name="Submit" class="btn btn-default">Odoslat</button>
             </form>
         </div>
 

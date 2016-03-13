@@ -1,7 +1,7 @@
 <?php
 
-include_once("./includes/config.php");
-include_once("header.php");
+include_once("includes/common.php");
+include_once("includes/config.php");
 
 ?>
 <!DOCTYPE html>

@@ -7,6 +7,9 @@
  */
 
 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="sk">
@@ -51,20 +54,13 @@
                     <a href="about.php">O nás</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">obchod</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obchod</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="men.php">
-
-                                 muzi
-                            </a>
+                            <a href="men.php">Muzi</a>
                         </li>
                         <li>
-                            <a href="woman.php">
-
-                                 zeny
-
-                            </a>
+                            <a href="woman.php">Zeny</a>
                         </li>
 
                     </ul>
@@ -72,6 +68,19 @@
                 <li>
                     <a href="contact.php">Kontakt</a>
                 </li>
+
+<?php
+
+if (GetSession("UserId")!="") {
+	echo '<li><a href="logout.php">Odhlasit</a></li>';
+}else{
+	echo '<li><a href="login.php">Prihlasit</a></li>';
+	echo '<li><a href="register.php">Registrovat</a></li>';
+
+}
+?>
+                
+
                 <li>
                     <a href="basket.php"><i class="fa fa-shopping-basket"></i>
                     </a>
