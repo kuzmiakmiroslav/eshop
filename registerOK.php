@@ -1,17 +1,21 @@
 <?php
 
-session_start();
+
 
 include_once("includes/config.php");
 include_once("header.php");
 
-?>
+
+?>jjojojkjk
+<html>session_start();
+<body>
 <div class="container">
 	<div class="well well-sm">
-		<p>Registracia bola uspesna.</p>
-		<a href="index.php" class="btn btn-success">Pokracovat</a> 
+		<p>Registrácia bola uspešna.</p>
+		<a href="index.php" class="btn btn-success">Pokračovať</a>
 	</div>    
-</div>
+</div></body></html>
 <?php
+
 include_once("footer.php");
 ?>

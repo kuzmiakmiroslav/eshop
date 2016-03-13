@@ -11,11 +11,11 @@ if (isset($_POST['Submit'])) {
 	$password = $_POST['password'];
 
 	if( $email == ""){
-		$errors[]="Email musite zadat.";
+		$errors[]="Zadajte email";
 	}
 
 	if( $password == ""){
-		$errors[]="Heslo musite zadat.";
+		$errors[]="Zadajte heslo";
 	}
 
 	if($email!=""){
@@ -30,7 +30,7 @@ if (isset($_POST['Submit'])) {
 			$email = $obj->email;
 
 			if($email == "" || $passcode!=$password ){
-				$errors[] = "Nespravne prihlasovacie udaje.";
+				$errors[] = "Nesprávne prihlasovacie údaje.";
 			}else{
 				SetSession("UserId", $id);
 				header('Location: index.php');
@@ -77,7 +77,7 @@ if (!empty($errors)) {
                            placeholder="Heslo">
                 </div>
 
-                <button type="submit" name="Submit" class="btn btn-default">Odoslat</button>
+                <button type="submit" name="Submit" class="btn btn-default">Odoslať</button>
             </form>
         </div>
 

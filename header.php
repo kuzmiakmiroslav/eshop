@@ -57,10 +57,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obchod</a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="men.php">Muzi</a>
+                            <a href="men.php">Muži</a>
                         </li>
                         <li>
-                            <a href="woman.php">Zeny</a>
+                            <a href="woman.php">Ženy</a>
                         </li>
 
                     </ul>
@@ -72,10 +72,10 @@
 <?php
 
 if (GetSession("UserId")!="") {
-	echo '<li><a href="logout.php">Odhlasit</a></li>';
+	echo '<li><a href="logout.php">Odhlasiť</a></li>';
 }else{
-	echo '<li><a href="login.php">Prihlasit</a></li>';
-	echo '<li><a href="register.php">Registrovat</a></li>';
+	echo '<li><a href="login.php">Prihlasiť</a></li>';
+	echo '<li><a href="register.php">Registrovať</a></li>';
 
 }
 ?>

@@ -87,7 +87,7 @@ if (!empty($errors)) {
 
                 <div class="form-group">
                     <label for="name">Meno a Priezvisko</label>
-                    <input name="name" type="password" class="form-control" id="name"
+                    <input name="name" type="text" class="form-control" id="name"
                            placeholder="Meno a priezvisko"/>
                 </div>
 

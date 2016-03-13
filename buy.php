@@ -12,7 +12,7 @@ if ($code != "") {
 }
 else{
 
-    echo "Chyba: Prazdny alebo nespravny kod.";
+    echo "Chyba: Prázdny alebo nespravny kod.";
     exit;
 
 }
