@@ -15,8 +15,9 @@ include_once("pageHeader.php");
                 <th>Číslo objednavky</th>
                 <th>Kód tovaru</th>
                 <th>Názov</th>
-                <th>Popis</th>
-                <th>Obrazok</th>
+                <th>Uživateľ</th>
+                <th>Email</th>
+                <th>Adresa</th>
                 <th>Cena</th>
                 <th>Správa</th>
 
@@ -32,9 +33,10 @@ include_once("pageHeader.php");
                     echo '<td>' . $obj->order_id . '</td>';
                     echo '<td>' . $obj->product_code . '</td>';//
                     echo '<td>' . $obj->product_name . '</td>';
-                    echo '<td>' . $obj->product_desc . '</td>';
-                    echo '<td>' . $obj->product_img_name . '</td>';
+                    echo '<td>' . $obj->user_name . '</td>';
+                    echo '<td>' . $obj->email . '</td>';
                     echo '<td>' . $obj->price . '</td>';
+                    echo '<td>' . $obj->user_address . '</td>';
                     echo '<td>' . $obj->message . '</td>';
 
                     echo '</tr>';
