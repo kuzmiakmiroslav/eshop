@@ -1,7 +1,11 @@
 <?php
 include_once("includes/session.php");
+include_once("includes/checkUser.php");
+
 include_once("includes/databaseConnect.php");
 include_once("pageHeader.php");
+$isEmpty = true;
+
 ?>
 
 
@@ -34,6 +38,7 @@ include_once("pageHeader.php");
 
             while ($obj = $results->fetch_object()) {
 
+                $isEmpty = false;
                 echo '<tr>';
                 echo '<td><img src="images/' . $obj->product_img_name . '"  width="80" height="80" /></td>'; //
                 echo '<td>' . $obj->product_code . '</td>'; //
@@ -51,6 +56,9 @@ include_once("pageHeader.php");
     </table>
 </div>
 
+<?php
+if ( !$isEmpty ) {
+    ?>
 <div class="container">
 
     <form action="orderSend.php" method="post">
@@ -65,6 +73,12 @@ include_once("pageHeader.php");
 
 
 </div>
+
+    <?php
+}
+?>
+
+
 
 <?php
 

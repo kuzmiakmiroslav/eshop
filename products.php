@@ -30,7 +30,7 @@ include_once("pageHeader.php");
                     echo '<div class="caption">';
                     echo '<h4>' . $obj->product_name . '</h4>';
                     echo '<div class="descr">' . $obj->product_desc . '</div>';
-                    echo '<a href="buy.php?code=' . $obj->product_code . '"><div class="btn btn-default btn-kosik pull-right">Do košíka</div></a>';
+                    echo '<a class="btn btn-default btn-kosik pull-right" href="buy.php?code=' . $obj->product_code . '">Do košíka</a>';
 
                     echo '<div class="price">' . '€ &nbsp' . $obj->price . '</div>';
 

@@ -3,9 +3,6 @@
 //zacneme session, klientovi sa posle cookies PHPSESSID=jov66atp4eksh5r71loo81u361; path=/; domain=localhost
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 //ulozi do session zaslany parameter a hodnotu
 function SetSession($param_name, $param_value){

@@ -1,7 +1,8 @@
 <?php
-$adminId = GetSession("AdminId");
+$adminId = GetSession("UserId");
 if($adminId==""){
     header("Location: login.php" );
     exit;
 }
+
 ?>

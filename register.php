@@ -110,7 +110,7 @@ include_once("pageHeader.php");
                 </div>
 
 
-                <button type="submit" name="Submit" class="btn btn-default">Odoslat</button>
+                <button type="submit" name="Submit" class="btn btn-primary">Registrovat</button>
             </form>
         </div>
 

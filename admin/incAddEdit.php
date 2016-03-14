@@ -1,8 +1,8 @@
 <?php
 
-include_once("../includes/databaseConnect.php");
 include_once("../includes/session.php");
 include_once("includes/checkUser.php");
+include_once("../includes/databaseConnect.php");
 
 $name = "";
 $code = "";

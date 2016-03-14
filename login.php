@@ -76,7 +76,8 @@ include_once("pageHeader.php");
                     <input name="password" type="password" class="form-control" id="password" placeholder="Heslo">
                 </div>
 
-                <button type="submit" name="Submit" class="btn btn-default">Odoslať</button>
+                <button type="submit" name="Submit" class="btn btn-primary">Odoslať</button>
+                <a href="register.php" class="btn btn-default">Registrovat</a>
             </form>
         </div>
 

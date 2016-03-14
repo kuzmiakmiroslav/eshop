@@ -6,9 +6,9 @@
  * Time: 22:08
  */
 
-include_once("../includes/databaseConnect.php");
 include_once("../includes/session.php");
 include_once("includes/checkUser.php");
+include_once("../includes/databaseConnect.php");
 
 
 $id = $_GET['id'];
