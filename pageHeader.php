@@ -41,18 +41,10 @@
                 <li>
                     <a href="about.php">O nás</a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Obchod</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="men.php">Muži</a>
-                        </li>
-                        <li>
-                            <a href="woman.php">Ženy</a>
-                        </li>
-
-                    </ul>
+                <li>
+                    <a href="products.php">Obchod</a>
                 </li>
+
                 <li>
                     <a href="contact.php">Kontakt</a>
                 </li>

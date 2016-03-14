@@ -8,17 +8,6 @@ include_once("pageHeader.php");
 ?>
 
 
-
-
-    
-
-    
-    
-    
-
-
-
-
 <section class="content services services-3x border-top border-bottom">
         <div class="container">
         	<div class="row row-no-padding">

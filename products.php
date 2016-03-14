@@ -2,24 +2,19 @@
 
 include_once("includes/session.php");
 include_once("includes/databaseConnect.php");
-
 include_once("pageHeader.php");
 
 ?>
-
-
-
-<body>
-<html>
 <div class="container">
     <h1>Obchod</h1>
+
     <div class="container">
         <div class="row">
 
             <?php
 
 
-            $results = $connection->query("SELECT product_name, product_desc, price, product_img_name, product_code FROM `products` WHERE sex = 1 ");
+            $results = $connection->query("SELECT * FROM `products` ");
             if ($results) {
 
 
@@ -37,7 +32,7 @@ include_once("pageHeader.php");
                     echo '<div class="descr">' . $obj->product_desc . '</div>';
                     echo '<a href="buy.php?code=' . $obj->product_code . '"><div class="btn btn-default btn-kosik pull-right">Do košíka</div></a>';
 
-                    echo '<div class="price">'. '€ &nbsp' . $obj->price  .'</div>';
+                    echo '<div class="price">' . '€ &nbsp' . $obj->price . '</div>';
 
                     echo '</div></div></div>';
 
@@ -52,14 +47,13 @@ include_once("pageHeader.php");
 
         </div>
     </div>
-    </div>
-</html>
-</body>
+</div>
 
-    <?php
+<?php
 
-    include_once("pageFooter.php");
+include_once("pageFooter.php");
+include_once("includes/databaseClose.php");
 
-    ?>
+?>
 
 	
