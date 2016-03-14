@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `basket` (
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) ,
+  `order_id` varchar(50) ,
   `user_name` varchar(50) ,
   `user_address` varchar(50) ,
   `message` varchar(255) ,

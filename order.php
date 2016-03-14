@@ -10,7 +10,7 @@ $isEmpty = true;
 
 
 <div class="container">
-    <h1>Objednavka</h1>
+    <h1>Objednávka</h1>
     <table class="table">
         <tr>
             <th>Obrázok</th>
@@ -68,7 +68,7 @@ if ( !$isEmpty ) {
             <textarea name="message" type="email" class="form-control" id="message" placeholder="Sprava"></textarea>
         </div>
 
-        <button type="submit" name="Submit" class="btn btn-default">Odoslat</button>
+        <button type="submit" name="Submit" class="btn btn-success">Odoslať</button>
     </form>
 
 

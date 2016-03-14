@@ -12,23 +12,25 @@ include_once("pageHeader.php");
     <div class="table-responsive">
         <table class="table">
             <tr>
-                <th>Kód</th>
+                <th>Číslo objednavky</th>
+                <th>Kód tovaru</th>
                 <th>Názov</th>
                 <th>Popis</th>
                 <th>Obrazok</th>
                 <th>Cena</th>
-                <th>Sprava</th>
+                <th>Správa</th>
 
             </tr>
             <?php
-            $results = $connection->query("SELECT * FROM orders ");
+            $results = $connection->query("SELECT * FROM orders order by order_id desc");
             if ($results) {
 
                 while ($obj = $results->fetch_object()) {
 
 
                     echo '<tr>';
-                    echo '<td>' . $obj->product_code . '</td>'; //
+                    echo '<td>' . $obj->order_id . '</td>';
+                    echo '<td>' . $obj->product_code . '</td>';//
                     echo '<td>' . $obj->product_name . '</td>';
                     echo '<td>' . $obj->product_desc . '</td>';
                     echo '<td>' . $obj->product_img_name . '</td>';
