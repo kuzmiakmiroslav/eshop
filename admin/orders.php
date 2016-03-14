@@ -17,8 +17,8 @@ include_once("pageHeader.php");
                 <th>Názov</th>
                 <th>Uživateľ</th>
                 <th>Email</th>
-                <th>Adresa</th>
                 <th>Cena</th>
+                <th>Adresa</th>
                 <th>Správa</th>
 
             </tr>
