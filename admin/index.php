@@ -1,13 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kuzmik
- * Date: 03.01.16
- * Time: 20:34
- */
 
-include_once("header.php");
-include_once("footer.php");
+include_once("../includes/databaseConnect.php");
+include_once("../includes/session.php");
+
+include_once("pageHeader.php");
+include_once("pageFooter.php");
+
+include_once("../includes/databaseClose.php");
 
 
 ?>

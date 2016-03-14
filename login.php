@@ -22,7 +22,6 @@ if (isset($_POST['Submit'])) {
 
         $sql = "SELECT * FROM users WHERE email='$email'";
         $results = $connection->query($sql);
-
         if ($obj = $results->fetch_object()) {
 
             $id = $obj->id;
@@ -30,12 +29,15 @@ if (isset($_POST['Submit'])) {
             $email = $obj->email;
 
             if ($passcode != $password) {
-                $errors[] = "Nesprávne prihlasovacie údaje.";
+                $errors[] = "Nesprávne heslo.";
             } else {
                 SetSession("UserId", $id);
                 header('Location: index.php');
                 exit;
             }
+        }else{
+            //nenasli sme uzivatela s danym heslom
+            $errors[] = "Uzivatel neexistuje.";
         }
 
     }

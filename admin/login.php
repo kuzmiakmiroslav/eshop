@@ -1,35 +1,54 @@
 <?php
 
-include_once("../includes/databaseConnect.php");
-session_start();
+include_once("../includes/session.php");
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$errors = array();
 
-    $myusername = mysqli_real_escape_string($db, $_POST['username']);
-    $mypassword = mysqli_real_escape_string($db, $_POST['password']);
+if (isset($_POST['Submit'])) {
 
-    $sql = "SELECT id FROM admin WHERE username='$myusername' and passcode='$mypassword'";
-    $result = mysqli_query($db, $sql);
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $active = $row['active'];
-    $count = mysqli_num_rows($result);
+    $password = $_POST['password'];
 
+    if ($password == "root") {
+        SetSession("AdminId", "1");
+        header("location: index.php");
 
-    // If result matched $myusername and $mypassword, table row must be 1 row
-    if ($count == 1) {
-        session_register("myusername");
-        $_SESSION['login_user'] = $myusername;
-
-        header("location: welcome.php");
     } else {
-        $error = "Your Login Name or Password is invalid";
+        $errors[] = "Nesprávne heslo.";
+
     }
 }
+include_once("pageHeader.php");
+
 ?>
-<form action="" method="post">
-    <label>UserName :</label>
-    <input type="text" name="username"/><br/>
-    <label>Password :</label>
-    <input type="password" name="password"/><br/>
-    <input type="submit" value=" Submit "/><br/>
-</form>
+<div class="container">
+    <h2>Prihlasenie</h2>
+
+    <div class="row">
+        <div class="col-md-4">
+            <?php
+
+            if (!empty($errors)) {
+                echo '<div class="alert alert-danger">';
+                foreach ($errors as $err) {
+                    echo $err . "<br/>";
+                }
+                echo '</div>';
+            }
+            ?>
+
+            <form action="login.php" method="post">
+
+                <div class="form-group">
+                    <label for="password">Heslo</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Heslo">
+                </div>
+
+                <button type="submit" name="Submit" class="btn btn-default">Odoslať</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php
+include_once("pageFooter.php");
+?>

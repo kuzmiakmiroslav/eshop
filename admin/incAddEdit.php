@@ -1,20 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kuzmik
- * Date: 03.01.16
- * Time: 20:34
- */
-
-
 
 include_once("../includes/databaseConnect.php");
+include_once("../includes/session.php");
+include_once("includes/checkUser.php");
 
 $name = "";
 $code = "";
 $price = 0;
 $desc = "";
 $sex = "";
+$imgCurrent = "";
 
 //inicializacia premennej pola errors
 $errors = array();
@@ -22,20 +17,14 @@ if(!isset($_POST['Submit'])) {
 
 	if($action=="edit"){
 
-		$results = $connection->query("SELECT id,product_code, product_name, product_desc, product_img_name, price,sex FROM products where id=" . $id);
-
+		$results = $connection->query("SELECT * FROM products where id=" . $id);
 		if ($obj = $results->fetch_object()) {
-
-
 			$code = $obj->product_code;
 			$name = $obj->product_name;
 			$price = $obj->price;
 			$desc = $obj->product_desc;
-			$sex = $obj->sex;
-
-
+            $imgCurrent = $obj->product_img_name;
 		}
-
 
 	}
 
@@ -51,7 +40,6 @@ if(!isset($_POST['Submit'])) {
 		$code = $_POST['product_code'];
 		$price = $_POST['price'];
 		$desc = $_POST['product_desc'];
-		$sex = $_POST['sex'];
 
 
 		//validacia odoslanych premennych
@@ -59,11 +47,14 @@ if(!isset($_POST['Submit'])) {
 			$errors[]="Nazov tovaru nemoze byt prazdny.";
 		}
 
+        if( $code == ""){
+            $errors[]="kod tovaru nemoze byt prazdny.";
+        }
+
+		$product_img_name  ="";
 
 		//kontrola ci bol odoslany obrazok
 		if( empty($errors)==true && isset($_FILES['product_img']) && $_FILES['product_img']['size'] > 0){
-
-
 
 			$product_img_name = $_FILES['product_img']['name'];
 			$file_size = $_FILES['product_img']['size'];
@@ -90,12 +81,21 @@ if(!isset($_POST['Submit'])) {
 		if (empty($errors)==true) {
 
 			if($action=="insert"){
-				$sql = "INSERT INTO `products` (`product_code`, `product_name`, `product_desc`, `product_img_name`, `price`, `sex`)
-						VALUES ( '$code', '$name', '$desc', '$product_img_name',$price,$sex)";
+				$sql = "INSERT INTO `products` (`product_code`, `product_name`, `product_desc`, `product_img_name`, `price`)
+						VALUES ( '$code', '$name', '$desc', '$product_img_name',$price)";
 
 			}else{
-				$sql = "update `products` set product_name='$name',product_code='$code',product_desc='$desc',price='$price',product_img_name='$product_img_name',sex='$sex'
+
+                if($product_img_name==""){
+                    $sql = "update `products` set product_name='$name',product_code='$code',product_desc='$desc',price='$price'
 					where id=" . $id;
+
+                }else{
+                    $sql = "update `products` set product_name='$name',product_code='$code',product_desc='$desc',price='$price',product_img_name='$product_img_name'
+					where id=" . $id;
+
+                }
+
 
 			}
 
@@ -118,12 +118,12 @@ if(!isset($_POST['Submit'])) {
 
 }
 
-include_once("header.php");
+include_once("pageHeader.php");
 
 ?>
 
 <div class="container">
-<h1>Form: Product <?php echo $action ?></h1>  
+<h1>Formular: Produkt <?php echo $action ?></h1>
 
 <?php
 
@@ -135,9 +135,9 @@ if (!empty($errors)) {
 	echo '</div>';
 }
 
-$formAction="add.php";
+$formAction="productAdd.php";
 if($action=="edit"){
-	$formAction="edit.php?id=".$id;
+	$formAction="productEdit.php?id=".$id;
 }
 
 ?>
@@ -145,23 +145,23 @@ if($action=="edit"){
 
 <form role="form" name="addProduct" method="post" action="<?php echo $formAction ?>" enctype = "multipart/form-data">
 
-	<tr><td rowspan="2">Kategória</td>
-		<td><input type="radio" name="sex" value="1"/>Male</td>
-	<tr>
-		<td><input type="radio" name="sex" value="0"/>Female</td></tr>
-	</tr>
 
-	<div class="form-group">
+
+
+    <div class="form-group">
       <label for="product_name">Názov produktu</label>
       <input value="<?php echo $name ?>" id="product_name" type="text" class="form-control" name="product_name">
     </div>
+
     <div class="form-group">
       <label for="product_code">Číslo produktu</label>
       <input value="<?php echo $code ?>" id="product_code" type="text" class="form-control" name="product_code">
     </div>
     <div class="form-group">
       <label for="product_img">Obrazok</label>
-		<input id="product_img" type="file" class="upload" name="product_img">
+		<span><?php echo $imgCurrent ?></span>
+        <input type="hidden" name="product_img_current" value="<?php echo $imgCurrent ?>">
+        <input id="product_img" type="file" class="upload" name="product_img">
     </div>
     <div class="form-group">
       <label for="price">Cena</label>
@@ -169,7 +169,7 @@ if($action=="edit"){
     </div>
     <div class="form-group">
       <label for="product_desc">Popis</label>
-      <input value="<?php echo $desc ?>" id="product_desc" type="text" class="form-control" name="product_desc">
+      <textarea id="product_desc" class="form-control" name="product_desc"><?php echo $desc ?></textarea>
     </div>
     <button type="submit" name="Submit"  class="btn btn-default">Odošli</button>
     <a href="productList.php" class="btn btn-default">Návrat</a>
@@ -177,9 +177,8 @@ if($action=="edit"){
 </div>
 
 <?php
-include_once("footer.php");
-
-
+include_once("pageFooter.php");
+include_once("../includes/databaseClose.php");
 ?>
 
 

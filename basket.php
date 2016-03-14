@@ -44,7 +44,7 @@ if ($results) {
         echo '<td>' . $obj->product_name . '</td>'; //
         echo '<td>' . $obj->price . '</td>'; //
         echo '<td>' . $obj->quantity . '</td>';
-        echo '<td><a href="delete.php?id=' . $obj->id . '"><i class="fa fa-times"></i></a></td>';
+        echo '<td><a href="productDelete.php?id=' . $obj->id . '"><i class="fa fa-times"></i></a></td>';
         echo '</tr>';
 
 
