@@ -22,6 +22,8 @@ include_once("pageHeader.php");
         </tr>
 
         <?php
+
+        $basket_id = $_COOKIE['shopping_cart_id'] ;
         $SQL = "
   SELECT
     basket.id,
@@ -31,6 +33,7 @@ include_once("pageHeader.php");
     products.price,
     quantity
     FROM `basket` inner join products on basket.product_code = products.product_code
+    where basket.basket_id='$basket_id'
 ";
         $results = $connection->query($SQL);
         if ($results) {

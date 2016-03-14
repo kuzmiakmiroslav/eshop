@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 CREATE TABLE IF NOT EXISTS `basket` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `session_id` varchar(60) NOT NULL,
+  `basket_id` varchar(60) NOT NULL,
   `product_code` varchar(60) NOT NULL,
   `quantity` double ,
   PRIMARY KEY (`id`)
