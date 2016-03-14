@@ -4,11 +4,11 @@ include_once("includes/checkUser.php");
 
 include_once("includes/databaseConnect.php");
 
+$message = "Kosik je prazdny.";
 $basket_id = $_COOKIE['shopping_cart_id'];
 $SQL = "SELECT * FROM `basket`  where basket.basket_id='$basket_id' ";
 
 $results = $connection->query($SQL);
-$message = "Kosik je prazdny.";
 if ($results) {
 
     if ($obj = $results->fetch_object()) {
