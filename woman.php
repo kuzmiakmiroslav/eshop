@@ -1,7 +1,7 @@
 <?php
-include_once("includes/common.php");
-include_once("includes/config.php");
-include_once("header.php");
+include_once("includes/session.php");
+include_once("includes/databaseConnect.php");
+include_once("pageHeader.php");
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include_once("header.php");
             <?php
 
 
-            $results = $mysqli->query("SELECT product_name, product_desc, price, product_img_name, product_code FROM `products` WHERE sex = 0 ");
+            $results = $connection->query("SELECT product_name, product_desc, price, product_img_name, product_code FROM `products` WHERE sex = 0 ");
             if ($results) {
 
 
@@ -57,7 +57,7 @@ include_once("header.php");
 
 <?php
 
-include_once("footer.php");
+include_once("pageFooter.php");
 
 ?>
 

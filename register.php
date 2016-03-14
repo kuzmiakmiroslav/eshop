@@ -1,88 +1,105 @@
 <?php
 
-include_once("includes/common.php");
-include_once("includes/config.php");
+include_once("includes/session.php");
+include_once("includes/databaseConnect.php");
 
 if (isset($_POST['Submit'])) {
 
-	$errors = array();
+    //pole chyb
+    $errors = array();
 
-	$email = $_POST['email'];
-	$password = $_POST['password'];
-	$name = $_POST['name'];
+    $email = $_POST['email'];
+    $password1 = $_POST['password1'];
+    $password2 = $_POST['password2'];
+    $name = $_POST['name'];
 
-	$sql = "SELECT count(*) as count FROM users WHERE email='$email'";
-	$results = $mysqli->query($sql);
+    if ($email == "") {
+        $errors[] = "Email musíte zadať.";
+    }
 
-	if ($obj = $results->fetch_object()) {
-		$counts = $obj->count;
-		if($counts>0){
-			$errors[] = "Uzivatel s emailom " . email . " uz existuje";
-		}
-	}
+    if ($password1 == "") {
+        $errors[] = "Heslo musite zadat.";
+    }
 
-	if( $email == ""){
-		$errors[]="Email musite zadat.";
-	}
+    if ($password2 == "") {
+        $errors[] = "Heslo musite zadat.";
+    }
 
-	if( $password == ""){
-		$errors[]="Heslo musite zadat.";
-	}
+    if ($password2 != $password1) {
+        $errors[] = "Hesla sa nezhoduju.";
+    }
 
-	if( $name == ""){
-		$errors[]="Meno musite zadat.";
-	}
+    if ($name == "") {
+        $errors[] = "Meno musite zadat.";
+    }
 
-	if (empty($errors)) {
+    $sql = "SELECT count(*) as count FROM users WHERE email='$email'";
+    $results = $connection->query($sql);
 
-		$sql = "insert into users (email,passcode,name) values('$email','$password','$name')";
-		$result = $mysqli->query($sql);
-		if(!$result){
-			$errors[]= $mysqli->error;
-		}else{
- 			$last_id = $mysqli->insert_id;
-			SetSession("UserId", $last_id );
-			header('Location: registerOK.php');
-			exit;
+    //test na existenciu užívateľa
+    if (empty($errors) && $obj = $results->fetch_object()) {
+        $counts = $obj->count;
+        if ($counts > 0) {
+            $errors[] = "Užívateľ s emailom " . $email . " už existuje.";
+        }
+    }
 
-			
-		}
+    if (empty($errors)) {
+
+        $sql = "insert into users (email,passcode,name) values('$email','$password1','$name')";
+        $result = $connection->query($sql);
+        if (!$result) {
+            $errors[] = $connection->error;
+        } else {
+            $last_id = $connection->insert_id;
+            SetSession("UserId", $last_id);
+            header('Location: registerOK.php');
+            exit;
 
 
-	}
+        }
+
+
+    }
 
 }
-include_once("header.php");
 
+include_once("pageHeader.php");
 ?>
 <div class="container">
-    
 
-<div class="row">
-   
-    <div class="col-md-4">
+    <div class="row">
+
+        <div class="col-md-4">
             <h2>Registracia</h2>
-<?php
+            <?php
 
-if (!empty($errors)) {
-	echo '<div class="alert alert-danger">';
-	foreach ($errors as $err) {
-		echo $err . "<br/>";
-	}
-	echo '</div>';
-}
+            if (!empty($errors)) {
+                echo '<div class="alert alert-danger">';
+                foreach ($errors as $err) {
+                    echo $err . "<br/>";
+                }
+                echo '</div>';
+            }
 
-?>
+            ?>
 
             <form action="register.php" method="post">
 
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Email">
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Heslo</label>
-                    <input name="password" type="password" class="form-control" id="exampleInputPassword1"
+                    <label for="password1">Heslo</label>
+                    <input name="password1" type="password" class="form-control" id="password1"
+                           placeholder="Heslo"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="password2">Zopakujte heslo</label>
+                    <input name="password2" type="password" class="form-control" id="password2"
                            placeholder="Heslo"/>
                 </div>
 
@@ -92,7 +109,7 @@ if (!empty($errors)) {
                            placeholder="Meno a priezvisko"/>
                 </div>
 
-                
+
                 <button type="submit" name="Submit" class="btn btn-default">Odoslat</button>
             </form>
         </div>
@@ -100,5 +117,6 @@ if (!empty($errors)) {
     </div>
 </div>
 <?php
-include_once("footer.php");
+include_once("pageFooter.php");
+include_once("databaseClose.php");
 ?>

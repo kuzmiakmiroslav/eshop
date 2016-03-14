@@ -3,4 +3,5 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-ahoj toto je footer
+</body>
+</html>

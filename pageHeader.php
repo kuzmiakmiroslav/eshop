@@ -1,16 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: kuzmik
- * Date: 03.01.16
- * Time: 20:34
- */
-
-
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -28,6 +15,7 @@
     <script src="../../assets/js/html5shiv.js"></script>
     <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -72,9 +60,9 @@
 <?php
 
 if (GetSession("UserId")!="") {
-	echo '<li><a href="logout.php">Odhlasiť</a></li>';
+	echo '<li><a href="logout.php">Odhlásiť</a></li>';
 }else{
-	echo '<li><a href="login.php">Prihlasiť</a></li>';
+	echo '<li><a href="login.php">Prihlásiť</a></li>';
 	echo '<li><a href="register.php">Registrovať</a></li>';
 
 }

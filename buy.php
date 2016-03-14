@@ -1,12 +1,12 @@
 <?php
 
-include_once("./includes/config.php");
+include_once("./includes/databaseConnect.php");
 $code = $_GET['code'];
 
 if ($code != "") {
 
     $sql = "INSERT INTO `basket` (`product_code`, `quantity`) VALUES (  '$code', 1)";
-    $mysqli->query($sql);
+    $connection->query($sql);
     header('Location: basket.php');
 
 }

@@ -6,7 +6,7 @@
  * Time: 20:34
  */
 
-include_once("../includes/config.php");
+include_once("../includes/databaseConnect.php");
 include_once("header.php");
 ?>
 
@@ -32,7 +32,7 @@ include_once("header.php");
 
         	</tr>
         <?php
-        $results = $mysqli->query("SELECT id,product_code, product_name, product_desc, product_img_name, price FROM products ORDER BY id ASC");  //vyber produktov z tabulky produkty zoradit podla zostupu
+        $results = $connection->query("SELECT id,product_code, product_name, product_desc, product_img_name, price FROM products ORDER BY id ASC");  //vyber produktov z tabulky produkty zoradit podla zostupu
         if ($results) {
 
         	while ($obj = $results->fetch_object()) {

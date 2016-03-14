@@ -1,9 +1,9 @@
 <?php
 
-include_once("includes/common.php");
-include_once("includes/config.php");
+include_once("includes/session.php");
+include_once("includes/databaseConnect.php");
 
-include_once("header.php");
+include_once("pageHeader.php");
 
 ?>
 
@@ -33,7 +33,7 @@ $SQL ="
     quantity
     FROM `basket` inner join products on basket.product_code = products.product_code
 ";
-$results = $mysqli->query($SQL);
+$results = $connection->query($SQL);
 if ($results) {
 
     while ($obj = $results->fetch_object()) {
@@ -64,7 +64,7 @@ if ($results) {
 
 <?php
 
-    include_once("footer.php");
+    include_once("pageFooter.php");
 
 
 

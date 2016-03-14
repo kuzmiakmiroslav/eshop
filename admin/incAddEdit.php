@@ -8,7 +8,7 @@
 
 
 
-include_once("../includes/config.php");
+include_once("../includes/databaseConnect.php");
 
 $name = "";
 $code = "";
@@ -22,7 +22,7 @@ if(!isset($_POST['Submit'])) {
 
 	if($action=="edit"){
 
-		$results = $mysqli->query("SELECT id,product_code, product_name, product_desc, product_img_name, price,sex FROM products where id=" . $id);
+		$results = $connection->query("SELECT id,product_code, product_name, product_desc, product_img_name, price,sex FROM products where id=" . $id);
 
 		if ($obj = $results->fetch_object()) {
 
@@ -100,9 +100,9 @@ if(!isset($_POST['Submit'])) {
 			}
 
 
-			$result = $mysqli->query($sql);
+			$result = $connection->query($sql);
 			if(!$result){
-				$errors[]= $mysqli->error;
+				$errors[]= $connection->error;
 			}
 
 

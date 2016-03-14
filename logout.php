@@ -1,6 +1,6 @@
 <?php
 
-include_once("includes/common.php");
+include_once("includes/session.php");
 SetSession("UserId", "");
 header("Location: index.php" );
 

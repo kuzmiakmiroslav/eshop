@@ -1,50 +1,48 @@
 <?php
 
-include_once("includes/common.php");
-include_once("includes/config.php");
+include_once("includes/session.php");
+include_once("includes/databaseConnect.php");
 
 if (isset($_POST['Submit'])) {
 
-	$errors = array();
+    $errors = array();
 
-	$email = $_POST['email'];
-	$password = $_POST['password'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-	if( $email == ""){
-		$errors[]="Zadajte email";
-	}
+    if ($email == "") {
+        $errors[] = "Zadajte email";
+    }
 
-	if( $password == ""){
-		$errors[]="Zadajte heslo";
-	}
+    if ($password == "") {
+        $errors[] = "Zadajte heslo";
+    }
 
-	if($email!=""){
+    if ($email != "" && $password !="") {
 
-		$sql = "SELECT * FROM users WHERE email='$email'";
-		$results = $mysqli->query($sql);
+        $sql = "SELECT * FROM users WHERE email='$email'";
+        $results = $connection->query($sql);
 
-		if ($obj = $results->fetch_object()) {
+        if ($obj = $results->fetch_object()) {
 
-			$id = $obj->id;
-			$passcode = $obj->passcode;
-			$email = $obj->email;
+            $id = $obj->id;
+            $passcode = $obj->passcode;
+            $email = $obj->email;
 
-			if($email == "" || $passcode!=$password ){
-				$errors[] = "Nesprávne prihlasovacie údaje.";
-			}else{
-				SetSession("UserId", $id);
-				header('Location: index.php');
-				exit;
-			}
-		}
+            if ($passcode != $password) {
+                $errors[] = "Nesprávne prihlasovacie údaje.";
+            } else {
+                SetSession("UserId", $id);
+                header('Location: index.php');
+                exit;
+            }
+        }
 
-	}
-
-
+    }
 
 
 }
-include_once("header.php");
+include_once("pageHeader.php");
 
 ?>
 
@@ -53,28 +51,27 @@ include_once("header.php");
 
         <div class="col-md-4">
             <h2>Prihlasenie</h2>
-<?php
+            <?php
 
-if (!empty($errors)) {
-	echo '<div class="alert alert-danger">';
-	foreach ($errors as $err) {
-		echo $err . "<br/>";
-	}
-	echo '</div>';
-}
+            if (!empty($errors)) {
+                echo '<div class="alert alert-danger">';
+                foreach ($errors as $err) {
+                    echo $err . "<br/>";
+                }
+                echo '</div>';
+            }
 
-?>
+            ?>
 
             <form action="login.php" method="post">
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input name="email" type="email" <?php echo 'value="'.$email.'"'; ?>'" class="form-control" id="email" placeholder="Email">
+                    <input name="email" type="email"  class="form-control" id="email" placeholder="Email" <?php echo 'value="' . $email . '"'; ?>'" >
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Heslo</label>
-                    <input name="password" type="password" class="form-control" id="password"
-                           placeholder="Heslo">
+                    <label for="password">Heslo</label>
+                    <input name="password" type="password" class="form-control" id="password" placeholder="Heslo">
                 </div>
 
                 <button type="submit" name="Submit" class="btn btn-default">Odoslať</button>
@@ -85,5 +82,6 @@ if (!empty($errors)) {
     </div>
 </div>
 <?php
-include_once("footer.php");
+include_once("pageFooter.php");
+include_once("includes/databaseClose.php.php");
 ?>

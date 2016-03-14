@@ -6,7 +6,7 @@
  * Time: 22:08
  */
 
-include_once("../includes/config.php");
+include_once("../includes/databaseConnect.php");
 $id = $_GET['id'];
 if($id==''){
 	$id = $_POST['id'];
@@ -17,7 +17,7 @@ if($id==''){
 
 
 $sql = ("DELETE FROM `products`WHERE id = " . $id);
-$results = $mysqli->query($sql);
+$results = $connection->query($sql);
 
 header('Location: productList.php');
 exit;
