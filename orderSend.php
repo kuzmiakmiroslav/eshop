@@ -12,15 +12,12 @@ $results = $connection->query($SQL);
 if ($results) {
 
     if ($obj = $results->fetch_object()) {
-        if ($obj = $results->fetch_object()) {
-            $message = "Objednavka odoslana.";
-            $SQL = "delete from `basket` where basket.basket_id='$basket_id'";
-            $results = $connection->query($SQL);
+        $message = "Objednavka odoslana.";
+        $SQL = "delete from `basket` where basket.basket_id='$basket_id'";
+        $results = $connection->query($SQL);
 
-        }
     }
 }
-
 
 
 include_once("pageHeader.php");
