@@ -1,15 +1,12 @@
 <?php
-
 include_once("includes/session.php");
 include_once("includes/databaseConnect.php");
 include_once("pageHeader.php");
-$isEmpty = true;
-
 ?>
 
 
 <div class="container">
-    <h1>Košík</h1>
+    <h1>Objednavka</h1>
     <table class="table">
         <tr>
             <th>Obrázok</th>
@@ -17,11 +14,9 @@ $isEmpty = true;
             <th>Názov</th>
             <th>Cena</th>
             <th>Množstvo</th>
-            <th>Zmazať</th>
         </tr>
 
         <?php
-
         $basket_id = $_COOKIE['shopping_cart_id'];
         $SQL = "
   SELECT
@@ -37,7 +32,6 @@ $isEmpty = true;
         $results = $connection->query($SQL);
         if ($results) {
 
-
             while ($obj = $results->fetch_object()) {
 
                 echo '<tr>';
@@ -46,9 +40,7 @@ $isEmpty = true;
                 echo '<td>' . $obj->product_name . '</td>'; //
                 echo '<td>' . $obj->price . '</td>'; //
                 echo '<td>' . $obj->quantity . '</td>';
-                echo '<td><a href="productDelete.php?id=' . $obj->id . '"><i class="fa fa-times"></i></a></td>';
                 echo '</tr>';
-                $isEmpty = false;
 
 
             }
@@ -61,25 +53,23 @@ $isEmpty = true;
 
 <div class="container">
 
-    <div class="clearfix">
-        <a class="pull-left btn btn-default" href="products.php"><i class="fa fa-angle-double-left"></i> Pokračovať v
-            nákupe</a>
+    <form action="orderSend.php" method="post">
 
-        <?php
-            if ( !$isEmpty ) {
-                echo '<a class="pull-right btn btn-default" href="order.php">Objednať <i class="fa fa-angle-double-right"></i></a>';
-            }
-        ?>
+        <div class="form-group">
+            <label for="message">Sprava</label>
+            <textarea name="message" type="email" class="form-control" id="message" placeholder="Sprava"></textarea>
+        </div>
 
-    </div>
+        <button type="submit" name="Submit" class="btn btn-default">Odoslat</button>
+    </form>
+
 
 </div>
 
 <?php
 
 include_once("pageFooter.php");
-include_once("includes/databaseClose.php");
 
 
+include_once("./includes/databaseClose.php");
 
-?>
