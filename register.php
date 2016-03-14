@@ -40,7 +40,8 @@ if (isset($_POST['Submit'])) {
 		if(!$result){
 			$errors[]= $mysqli->error;
 		}else{
-			SetSession("UserId", mysql_insert_id());
+ 			$last_id = $mysqli->insert_id;
+			SetSession("UserId", $last_id );
 			header('Location: registerOK.php');
 			exit;
 

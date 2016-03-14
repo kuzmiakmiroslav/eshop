@@ -1,4 +1,5 @@
 <?php
+
 $currency = '&#8377; '; //Currency Character or code
 
 $db_username = 'root';
@@ -11,6 +12,7 @@ $taxes              = array( //List your Taxes percent here.
 'VAT' => 12,
 'Service Tax' => 5
 );
+
 //connect to MySql
 $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name);
 if ($mysqli->connect_error) {
