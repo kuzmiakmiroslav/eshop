@@ -83,5 +83,5 @@ include_once("pageHeader.php");
 </div>
 <?php
 include_once("pageFooter.php");
-include_once("includes/databaseClose.php.php");
+include_once("includes/databaseClose.php");
 ?>
