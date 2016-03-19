@@ -12,6 +12,8 @@ if (isset($_POST['Submit'])) {
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
     $name = $_POST['name'];
+    $address = $_POST['address'];
+    $address = $_POST['address'];
 
     if ($email == "") {
         $errors[] = "Email musíte zadať.";
@@ -46,7 +48,7 @@ if (isset($_POST['Submit'])) {
 
     if (empty($errors)) {
 
-        $sql = "insert into users (email,passcode,name) values('$email','$password1','$name')";
+        $sql = "insert into users (email,passcode,name,address) values('$email','$password1','$name','$address')";
         $result = $connection->query($sql);
         if (!$result) {
             $errors[] = $connection->error;
@@ -108,6 +110,14 @@ include_once("pageHeader.php");
                     <input name="name" type="text" class="form-control" id="name"
                            placeholder="Meno a priezvisko"/>
                 </div>
+
+
+                <div class="form-group">
+                    <label for="address">Adresa</label>
+                    <input name="address" type="text" class="form-control" id="address"
+                           placeholder="Adresa"/>
+                </div>
+
 
 
                 <button type="submit" name="Submit" class="btn btn-primary">Registrovat</button>

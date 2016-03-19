@@ -64,8 +64,8 @@ if ( !$isEmpty ) {
     <form action="orderSend.php" method="post">
 
         <div class="form-group">
-            <label for="message">Sprava</label>
-            <textarea name="message" type="email" class="form-control" id="message" placeholder="Sprava"></textarea>
+            <label for="message">Správa</label>
+            <textarea name="message" type="email" class="form-control" id="message" placeholder="Správa"></textarea>
         </div>
 
         <button type="submit" name="Submit" class="btn btn-success">Odoslať</button>

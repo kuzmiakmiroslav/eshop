@@ -7,6 +7,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="../css/font-awesome.min.css">
@@ -27,7 +28,7 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="productList.php">Produkty</a></li>
-                <li><a href="orders.php">Objednavky</a></li>
+                <li><a href="orders.php">Objednávky</a></li>
 
                 <?php
 

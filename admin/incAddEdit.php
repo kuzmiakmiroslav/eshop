@@ -44,11 +44,11 @@ if(!isset($_POST['Submit'])) {
 
 		//validacia odoslanych premennych
 		if( $name == ""){
-			$errors[]="Nazov tovaru nemoze byt prazdny.";
+			$errors[]="Názov tovaru nemôže byť prázdny.";
 		}
 
         if( $code == ""){
-            $errors[]="kod tovaru nemoze byt prazdny.";
+            $errors[]="kód tovaru nemôže byť prázdny.";
         }
 
 		$product_img_name  ="";
@@ -158,7 +158,7 @@ if($action=="edit"){
       <input value="<?php echo $code ?>" id="product_code" type="text" class="form-control" name="product_code">
     </div>
     <div class="form-group">
-      <label for="product_img">Obrazok</label>
+      <label for="product_img">Obrázok</label>
 		<span><?php echo $imgCurrent ?></span>
         <input type="hidden" name="product_img_current" value="<?php echo $imgCurrent ?>">
         <input id="product_img" type="file" class="upload" name="product_img">

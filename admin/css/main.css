@@ -1,0 +1,21 @@
+body {
+    background-color: gainsboro;
+}
+h1 {color: #E8762D}
+a {
+    color: #E8762D;}
+.navbar{border-radius: 0px;}
+
+.navbar-inverse {
+    background-color:#E8762D ;
+    border: none ;
+
+    color:black;
+
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: black;
+}
+.navbar-inverse .navbar-brand {
+    color:black;
+}

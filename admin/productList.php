@@ -15,7 +15,7 @@ include_once("pageHeader.php");
                 <th>Kód</th>
                 <th>Názov</th>
                 <th>Popis</th>
-                <th>Obrazok</th>
+                <th>Obrázok</th>
                 <th>Cena</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
@@ -34,8 +34,8 @@ include_once("pageHeader.php");
                     echo '<td>' . $obj->product_desc . '</td>';
                     echo '<td>' . $obj->product_img_name . '</td>';
                     echo '<td>' . $obj->price . '</td>';
-                    echo '<td><a href="productEdit.php?id=' . $obj->id . '"><i class="fa fa-pencil-square-o"></i> Edit</a></td>'; // zobrazenei presmerovania edit
-                    echo '<td><a href="productDelete.php?id=' . $obj->id . '"><i class="fa fa-times"></i>Delete</a></td>'; //zobrazenie presmerovania delete
+                    echo '<td><a href="productEdit.php?id=' . $obj->id . '"><i class="fa fa-pencil-square-o"></i> Upraviť</a></td>'; // zobrazenei presmerovania edit
+                    echo '<td><a href="productDelete.php?id=' . $obj->id . '"><i class="fa fa-times"></i>Zmazať</a></td>'; //zobrazenie presmerovania delete
 
                     echo '</tr>';
 
@@ -48,7 +48,7 @@ include_once("pageHeader.php");
             }
             ?>
         </table>
-        <a href="productAdd.php"><i class="fa fa-plus"></i> Add product</a>
+        <a href="productAdd.php"><i class="fa fa-plus"></i> Pridať produkt</a>
     </div>
 
 </div>
