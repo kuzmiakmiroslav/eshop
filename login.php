@@ -37,7 +37,7 @@ if (isset($_POST['Submit'])) {
             }
         }else{
             //nenasli sme uzivatela s danym heslom
-            $errors[] = "Uzivatel neexistuje.";
+            $errors[] = "Uživateľ neexistuje.";
         }
 
     }
@@ -77,7 +77,7 @@ include_once("pageHeader.php");
                 </div>
 
                 <button type="submit" name="Submit" class="btn btn-primary">Odoslať</button>
-                <a href="register.php" class="btn btn-default">Registrovat</a>
+                <a href="register.php" class="btn btn-default">Registrovať</a>
             </form>
         </div>
 

@@ -1,8 +1,8 @@
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h1, h2, h3{
+    font-family: 'Roboto', sans-serif;
     color: #6b15a1;}
 
 .navbar-inverse{
@@ -19,7 +19,12 @@ color: #999;
     color: #6b15a1;
 }
 .navbar-inverse .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
     color: #999;}
+
+
+
 
 span{
     color: #6b15a1;
@@ -32,3 +37,10 @@ a:hover span {
     background-color: #6b15a1;
     border: none;
 }
+
+.btn-primary {
+    background-color: #999;
+    border: none;
+    color: #fff;
+}
+
