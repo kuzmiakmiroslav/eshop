@@ -45,7 +45,7 @@ include_once("pageHeader.php");
 <div class="container">
     <div class="well well-sm">
         <p><?php echo $notify ?></p>
-        <a href="index.php" class="btn btn-success">Pokračovať</a>
+        <a href="products.php" class="btn btn-success">Pokračovať</a>
     </div>
 </div>
 <?php
