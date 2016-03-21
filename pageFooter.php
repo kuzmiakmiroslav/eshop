@@ -7,15 +7,15 @@
     <p class="footer-company-motto">uStore</p>
 
     <p class="footer-links">
-        <a href="index.php">Home</a>
+        <a href="index.php">Úvod</a>
         ·
-        <a href="#">O nás</a>
+        <a href="about.php">O nás</a>
         ·
         <a href="products.php">Obchod</a>
         ·
-        <a href="#">Kontakt</a>
+        <a href="contact.php">Kontakt</a>
         ·
-        <a href="#">Košík</a>
+        <a href="basket.php">Košík</a>
 
     </p>
 

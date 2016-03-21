@@ -73,7 +73,7 @@ include_once("pageHeader.php");
     <div class="row">
 
         <div class="col-md-4">
-            <h2>Registracia</h2>
+            <h2>Registrácia</h2>
             <?php
 
             if (!empty($errors)) {
