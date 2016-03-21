@@ -46,8 +46,76 @@ a:hover span {
     border: none;
     color: #fff;
 }
+.btn-primary:hover {
+    background-color: #999;
+    border: none;
+    color: #fff;
+}
 
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     margin-top: 10px;
 }
 
+.footer-basic-centered{
+    background-color: #999;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font: normal 18px sans-serif;
+
+    padding: 45px;
+    margin-top: 80px;
+}
+
+.footer-basic-centered .footer-company-motto{
+    color:  #6b15a1;
+    font-size: 24px;
+    margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+    color:  #6b15a1;
+    font-size: 14px;
+    margin: 0;
+}
+
+.footer-basic-centered .footer-links{
+    list-style: none;
+    font-weight: bold;
+    color:  #ffffff;
+    padding: 35px 0 23px;
+    margin: 0;
+}
+
+.footer-basic-centered .footer-links a{
+    display:inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+    .footer-basic-centered{
+        padding: 35px;
+    }
+
+    .footer-basic-centered .footer-company-motto{
+        font-size: 18px;
+    }
+
+    .footer-basic-centered .footer-company-name{
+        font-size: 12px;
+    }
+
+    .footer-basic-centered .footer-links{
+        font-size: 14px;
+        padding: 25px 0 20px;
+    }
+
+    .footer-basic-centered .footer-links a{
+        line-height: 1.8;
+    }
+}
