@@ -59,6 +59,7 @@ include_once("pageHeader.php");
          HOLLISTER SALE
         30% NA VŠETKY DRUHY
         </H2>
+        <H3>Prejdite do nášho obchodu kde si môžete vybrať z veľkého sortimentu oblečenia značky hollister.</H3>
     </div>
 </div>
 
