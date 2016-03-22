@@ -10,7 +10,7 @@ include_once("pageHeader.php");
 
 
 
-<!-- Content Section -->
+
     <section>
         <div class="container">
             <div class="row">
@@ -23,11 +23,9 @@ include_once("pageHeader.php");
         </div>
     </section>
 
-    <!-- Fixed Height Image Aside -->
-    <!-- Image backgrounds are set within the full-width-pics.css file. -->
-    <aside class="image-bg-fixed-height"></aside>
 
-    <!-- Content Section -->
+
+
     <section>
         <div class="container">
             <div class="row">
@@ -39,18 +37,16 @@ include_once("pageHeader.php");
                         Naša firma ponúka oblečenie pre všetky vekové kategórie!</p>
                 </div>
             </div>
-            <!-- /.row -->
+
         </div>
-        <!-- /.container -->
+
     </section>
 
 
 
 
 
-</body>
 
-</html>
 <?php
 
 include_once("pageFooter.php");

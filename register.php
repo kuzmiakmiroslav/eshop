@@ -16,23 +16,23 @@ if (isset($_POST['Submit'])) {
     $address = $_POST['address'];
 
     if ($email == "") {
-        $errors[] = "Email musíte zadať.";
+        $errors[] = "Musíte zadať email.";
     }
 
     if ($password1 == "") {
-        $errors[] = "Heslo musite zadat.";
+        $errors[] = "Musíte zadať heslo.";
     }
 
     if ($password2 == "") {
-        $errors[] = "Heslo musite zadat.";
+        $errors[] = "Musíte zadať heslo.";
     }
 
     if ($password2 != $password1) {
-        $errors[] = "Hesla sa nezhoduju.";
+        $errors[] = "Hesla sa nezhodujú.";
     }
 
     if ($name == "") {
-        $errors[] = "Meno musite zadat.";
+        $errors[] = "Musíte zadať meno.";
     }
 
     $sql = "SELECT count(*) as count FROM users WHERE email='$email'";
@@ -120,7 +120,7 @@ include_once("pageHeader.php");
 
 
 
-                <button type="submit" name="Submit" class="btn btn-primary">Registrovat</button>
+                <button type="submit" name="Submit" class="btn btn-primary">Registrovať</button>
             </form>
         </div>
 

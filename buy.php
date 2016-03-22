@@ -22,7 +22,7 @@ if ($code != "") {
 }
 else{
 
-    echo "Chyba: Prázdny alebo nespravny kod.";
+    echo "Chyba: Prázdny alebo nesprávny kod.";
 
 }
 

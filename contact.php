@@ -9,11 +9,11 @@ include_once("pageHeader.php");
 
 
 
-<body>
+
 
     <div class="container">
 
-        <!-- Page Heading/Breadcrumbs -->
+
         <div class="row">
             <div class="col-lg-12">
                 <br><h1 class="page-header">Contact
@@ -22,9 +22,9 @@ include_once("pageHeader.php");
 
             </div>
         </div>
-        <!-- /.row -->
 
-        <!-- Content Row -->
+
+
         <div class="row">
             <!-- Map Column -->
             <div class="col-md-8">
@@ -38,12 +38,12 @@ include_once("pageHeader.php");
                     Slovensko<br>Poprad, Okružná 23<br>
                 </p>
                 <p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">Phone</abbr>: 0904 423 765</p>
+                   Phone: 0904 423 765</p>
                 <p><i class="fa fa-envelope-o"></i> 
-                    <abbr title="Email">Email</abbr>: <a href="mailto:name@example.com">ustore@ustore.sk</a>
+                    Email: <span><a href="mailto:name@example.com">ustore@ustore.sk</a></span>
                 </p>
                 <p><i class="fa fa-clock-o"></i> 
-                    <abbr title="Hours">Hours</abbr>: Pondelok - Piatok: 9:00  - 18:00</p>
+                   Hodiny: Pondelok - Piatok: 9:00  - 18:00</p>
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
                         <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -62,14 +62,12 @@ include_once("pageHeader.php");
         <hr>
 </div>
 
-    </div>
+
     <!-- /.container -->
 
 
 
-</body>
 
-</html>
 <?php
 
     include_once("pageFooter.php");

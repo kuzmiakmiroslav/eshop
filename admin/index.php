@@ -11,7 +11,7 @@ include_once("../includes/databaseClose.php");
 
 ?>
 <div class="container">
-    <h1>Vitajte v redakčnom systeme</h1>
+    <h1>Vitajte v redakčnom systéme</h1>
     <H1>Ustore</H1>
 
 

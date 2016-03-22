@@ -1,7 +1,4 @@
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+
 <footer class="footer-basic-centered">
 
     <p class="footer-company-motto">uStore</p>
@@ -24,4 +21,8 @@
 </footer>
 
 </body>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 </html>
