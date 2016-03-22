@@ -27,7 +27,7 @@ color: #999;
 
 span
 {
-    color: #6b15a1;
+    color:  #999;
 }
 
 .btn-success {
@@ -71,7 +71,7 @@ span
 
 /* Footer Styles */
 .footer-basic-centered{
-    background-color: #292c2f;
+    background-color: #999;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
@@ -83,13 +83,13 @@ span
 }
 
 .footer-basic-centered .footer-company-motto{
-    color:  #8d9093;
+    color: #6b15a1;
     font-size: 24px;
     margin: 0;
 }
 
 .footer-basic-centered .footer-company-name{
-    color:  #8f9296;
+    color:  black;
     font-size: 14px;
     margin: 0;
 }
@@ -137,4 +137,52 @@ span
     color:#6b15a1;
 }
 
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    height: 50%;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}
 

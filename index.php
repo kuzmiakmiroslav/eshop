@@ -2,11 +2,10 @@
 
 include_once("includes/session.php");
 include_once("includes/databaseConnect.php");
-include_once ("pageHeader.php");
+include_once("pageHeader.php");
 
 
 ?>
-
 <header id="myCarousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -18,21 +17,21 @@ include_once ("pageHeader.php");
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+            <div class="fill" style="background-image:url('./images/bck.jpg');"></div>
             <div class="carousel-caption">
-                <h2>Caption 1</h2>
+
             </div>
         </div>
         <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+            <div class="fill" style="background-image:url('./images/bck1.jpg');"></div>
             <div class="carousel-caption">
-                <h2>Caption 2</h2>
+
             </div>
         </div>
         <div class="item">
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+            <div class="fill" style="background-image:url('./images/bck2.jpg');"></div>
             <div class="carousel-caption">
-                <h2>Caption 3</h2>
+
             </div>
         </div>
     </div>
@@ -45,6 +44,23 @@ include_once ("pageHeader.php");
         <span class="icon-next"></span>
     </a>
 </header>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Vitajte v uStore
+            </h1>
+        </div>
+        <H2 style="color: black">
+         HOLLISTER SALE
+        30% NA VŠETKY DRUHY
+        </H2>
+    </div>
+</div>
 
 
 <?php
